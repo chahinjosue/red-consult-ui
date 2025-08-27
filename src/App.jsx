@@ -1,4 +1,5 @@
 import AuthGate from "./components/AuthGate";
+import { supabase } from "./lib/supabase";
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -153,7 +154,7 @@ function TopBar({ onSearch }) {
           </button>
           
           {/* Botón SALIR */}
-          </button
+          <button
             className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
             onClick={async () => {
               await supabase.auth.signOut();  // cerrar sesión
