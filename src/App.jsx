@@ -135,7 +135,11 @@ function TopBar({ onSearch }) {
     <div className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-3">
         <div className="flex items-center gap-2">
-          <div className="h-9 w-9 rounded-2xl bg-slate-900 grid place-items-center text-white font-bold">R</div>
+          <img
+            src="/logo-redconsult-icon.png"
+            alt="Red Consult"
+            className="h-9 w-auto rounded-md"
+          />
           <div className="leading-tight">
             <div className="text-slate-900 font-semibold">Red Consult</div>
             <div className="text-xs text-slate-500 -mt-0.5">Capacitación & Certificaciones</div>
