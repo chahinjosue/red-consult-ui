@@ -142,7 +142,6 @@ function TopBar({ onSearch }) {
           />
           <div className="leading-tight">
             <div className="text-slate-900 font-semibold">RED Consult</div>
-            <div className="text-xs text-slate-500 -mt-0.5">Capacitación & Certificaciones</div>
           </div>
         </div>
 
