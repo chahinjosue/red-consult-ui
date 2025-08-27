@@ -148,7 +148,7 @@ function TopBar({ onSearch }) {
         </div>
 
         {/* Acciones a la derecha */}
-        <div className="ml-3 flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-3">
           <button className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
             <HelpCircle size={16} className="inline -mt-0.5 mr-1" /> Ayuda
           </button>
