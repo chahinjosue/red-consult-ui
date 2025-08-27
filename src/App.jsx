@@ -608,8 +608,6 @@ export default function App() {
   const [tab, setTab] = useState("dashboard");
   const [search, setSearch] = useState("");
   const [opened, setOpened] = useState(null);
-  console.log("URL:", import.meta.env.VITE_SUPABASE_URL);
-  console.log("KEY:", import.meta.env.VITE_SUPABASE_ANON_KEY ? "OK" : "MISSING");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900">
