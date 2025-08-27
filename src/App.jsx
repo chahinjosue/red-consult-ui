@@ -134,34 +134,27 @@ function ProgressBar({ value }) {
 
 function TopBar() {
   return (
-    <div className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-3">
+    <div className="sticky top-0 z-40 bg-white border-b">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center">
+        {/* Izquierda: Logo */}
         <div className="flex items-center gap-2">
           <img
             src="/logo-redconsult-icon.png"
             alt="Red Consult"
             className="h-9 w-auto rounded-md"
           />
-          <div className="leading-tight">
-            <div className="text-slate-900 font-semibold">RED Consult</div>
-          </div>
+          <div className="text-slate-900 font-semibold">RED Consult</div>
         </div>
 
-        {/* Acciones a la derecha */}
-        <div className="ml-auto flex items-center gap-3">
-          <button className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
-            <HelpCircle size={16} className="inline -mt-0.5 mr-1" /> Ayuda
-          </button>
-          
-          {/* Botón SALIR */}
-          <div className="ml-auto">
-            <button
-              className="rounded-xl border px-4 py-2 text-sm hover:bg-slate-50"
-              onClick={async () => {
-                await supabase.auth.signOut();
-                location.reload();
-              }}
-            >
+        {/* Derecha: botón SALIR */}
+        <div className="ml-auto">
+          <button
+            className="rounded-xl border px-4 py-2 text-sm hover:bg-slate-50"
+            onClick={async () => {
+              await supabase.auth.signOut();
+              location.reload();
+            }}
+          >
             Salir
           </button>
         </div>
@@ -169,6 +162,7 @@ function TopBar() {
     </div>
   );
 }
+
 
 function Sidebar({ current, onChange }) {
   const items = [
