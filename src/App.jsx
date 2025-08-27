@@ -145,18 +145,6 @@ function TopBar({ onSearch }) {
           </div>
         </div>
 
-        <div className="ml-auto w-full max-w-lg">
-          <div className="flex items-center gap-2 rounded-xl border bg-white px-3 py-2">
-            <Search size={18} className="text-slate-500" />
-            <input
-              type="text"
-              placeholder="Buscar cursos, certificaciones, temas…"
-              className="w-full outline-none text-sm"
-              onChange={(e) => onSearch?.(e.target.value)}
-            />
-          </div>
-        </div>
-
         <div className="ml-3 flex items-center gap-3">
           <button className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
             <HelpCircle size={16} className="inline -mt-0.5 mr-1" /> Ayuda
