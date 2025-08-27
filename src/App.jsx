@@ -613,47 +613,46 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900">
       <AuthGate>
-      {/* aquí va todo lo que ya tienes: TopBar, Sidebar, etc */}
-      </AuthGate>
-      <TopBar onSearch={setSearch} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6">
-        <Sidebar current={tab} onChange={setTab} />
+        <TopBar onSearch={setSearch} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6">
+          <Sidebar current={tab} onChange={setTab} />
 
-        <main className="flex-1">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={tab}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.2 }}
-              className="grid gap-6"
-            >
-              {tab === "dashboard" && <Dashboard />}
-              {tab === "catalog" && (
-                <Catalog
-                  filter={search}
-                  onOpenCourse={(c) => {
-                    setOpened(c);
-                    setTab("course");
-                  }}
-                />
-              )}
-              {tab === "course" && <CoursePlayer course={opened} />}
-              {tab === "certificate" && <Certificate />}
-              {tab === "admin" && <Admin />}
-            </motion.div>
-          </AnimatePresence>
-        </main>
-      </div>
-
-      <MobileTabs current={tab} onChange={setTab} />
-
-      <footer className="mt-12 pb-24 lg:pb-6">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
-          © {new Date().getFullYear()} Red Consult · Plataforma demo UI
+          <main className="flex-1">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={tab}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2 }}
+                className="grid gap-6"
+              >
+                {tab === "dashboard" && <Dashboard />}
+                {tab === "catalog" && (
+                  <Catalog
+                    filter={search}
+                    onOpenCourse={(c) => {
+                      setOpened(c);
+                      setTab("course");
+                    }}
+                  />
+                )}
+                {tab === "course" && <CoursePlayer course={opened} />}
+                {tab === "certificate" && <Certificate />}
+                {tab === "admin" && <Admin />}
+              </motion.div>
+            </AnimatePresence>
+          </main>
         </div>
-      </footer>
+
+        <MobileTabs current={tab} onChange={setTab} />
+
+        <footer className="mt-12 pb-24 lg:pb-6">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
+            © {new Date().getFullYear()} Red Consult · Plataforma demo UI
+          </div>
+        </footer>
+      </AuthGate>
     </div>
   );
 }
