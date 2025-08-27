@@ -146,13 +146,22 @@ function TopBar({ onSearch }) {
           </div>
         </div>
 
+        {/* Acciones a la derecha */}
         <div className="ml-3 flex items-center gap-3">
           <button className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50">
             <HelpCircle size={16} className="inline -mt-0.5 mr-1" /> Ayuda
           </button>
-          <div className="h-9 w-9 rounded-full bg-slate-200 grid place-items-center">
-            <User size={18} className="text-slate-700" />
-          </div>
+          
+          {/* Botón SALIR */}
+          </button
+            className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
+            onClick={async () => {
+              await supabase.auth.signOut();  // cerrar sesión
+              location.reload();              // recarga para mostrar el login
+            }}
+          >
+            Salir
+          </button>
         </div>
       </div>
     </div>
