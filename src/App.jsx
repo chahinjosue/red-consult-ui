@@ -1,6 +1,6 @@
+import AuthGate from "./components/AuthGate";
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import AuthGate from "./components/AuthGate";
 import {
   Home,
   Library,
