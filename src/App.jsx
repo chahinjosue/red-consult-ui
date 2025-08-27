@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import AuthGate from "./components/AuthGate";
 import {
   Home,
   Library,
@@ -611,6 +612,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 text-slate-900">
+      <AuthGate>
+      {/* aquí va todo lo que ya tienes: TopBar, Sidebar, etc */}
+      </AuthGate>
       <TopBar onSearch={setSearch} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex gap-6">
         <Sidebar current={tab} onChange={setTab} />
