@@ -132,7 +132,7 @@ function ProgressBar({ value }) {
   );
 }
 
-function TopBar({ onSearch }) {
+function TopBar() {
   return (
     <div className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center gap-3">
@@ -154,13 +154,14 @@ function TopBar({ onSearch }) {
           </button>
           
           {/* Botón SALIR */}
-          <button
-            className="rounded-xl border px-3 py-2 text-sm hover:bg-slate-50"
-            onClick={async () => {
-              await supabase.auth.signOut();  // cerrar sesión
-              location.reload();              // recarga para mostrar el login
-            }}
-          >
+          <div className="ml-auto">
+            <button
+              className="rounded-xl border px-4 py-2 text-sm hover:bg-slate-50"
+              onClick={async () => {
+                await supabase.auth.signOut();
+                location.reload();
+              }}
+            >
             Salir
           </button>
         </div>
